@@ -12,9 +12,9 @@
 "provisioners":[
 {
 "type": "ansible-local",
-"playbook_file":"/home/centos/base-ami-builder/packer/provisioners/ansible/plays/myplay.yml",
+"playbook_file":"provisioners/ansible/plays/myplay.yml",
 "role_paths": [
-"/home/centos/base-ami-builder/packer/provisioners/ansible//roles/myrole"
+"provisioners/ansible//roles/myrole"
 ]
 }
 ]
