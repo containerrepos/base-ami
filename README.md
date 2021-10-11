@@ -7,35 +7,11 @@ Execution Flow
 
 step 1: clone repo
 
-$git clone https://github.com/cloudstones/docker-packer.git
+$git clonehttps://github.com/containerrepos/base-ami-builder.git
 
+$cd base-ami-builder
 
-step 2: enter src directory
+$docker image build -y mybaseami
 
-$cd docker-packer/src
-
-
-step 3: enter access key and secret key
-
-$vi variables.json
-
-{
-
-    "aws_access_key": "",
-    
-    "aws_secret_key": "",
-    
-    "region": "us-east-1"
-    
-  }
-
-
-Step 4: validate syntax
-
-$packer validate -var-file=variables.json builders.json
-
-
-Step 5: Build custome AMI
-
-$packer build -var-file=variables.json builders.json
+$docker container run -e 
 
