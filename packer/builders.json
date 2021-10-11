@@ -10,6 +10,12 @@
 "ami_name": "mybaseami"
 }],
 "provisioners":[
+ {
+ "type": "shell",
+  "inline": [
+    "sudo yum install epel-release -y && sudo yum install ansible -y"
+    ]
+ },
 {
 "type": "ansible-local",
 "playbook_file":"provisioners/ansible/plays/myplay.yml",
