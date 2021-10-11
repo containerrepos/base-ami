@@ -11,21 +11,11 @@
 }],
 "provisioners":[
 {
-"type":"file",
-"source":"/home/centos/docker-packer/src/ansible.repo",
-"destination":"/home/centos/ansible.repo"
-},
-{
-"type": "shell",
-"script": "/home/centos/docker-packer/src/bash-scripts/hardening.sh"
-},
-{
 "type": "ansible-local",
-"playbook_file":"/home/centos/docker-packer/src/ansible-playbooks/plays/myplay.yml",
+"playbook_file":"/home/centos/base-ami-builder/packer/provisioners/ansible/plays/myplay.yml",
 "role_paths": [
-"/home/centos/docker-packer/src/ansible-playbooks/roles/myrole"
+"/home/centos/base-ami-builder/packer/provisioners/ansible//roles/myrole"
 ]
-
 }
 ]
 }
