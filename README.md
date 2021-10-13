@@ -7,9 +7,9 @@ Execution Flow
 
 step 1: clone repo
 
-$git clonehttps://github.com/containerrepos/base-ami-builder.git
+$git clonehttps://github.com/containerrepos/base-ami.git
 
-$cd base-ami-builder
+$cd base-ami
 
 $docker image build -t mybaseami .
 
