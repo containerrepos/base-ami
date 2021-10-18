@@ -1,4 +1,5 @@
 {
+
 "builders":[{
 "type": "amazon-ebs",
 "access_key": "{{user `aws_access_key_id`}}",
@@ -6,9 +7,11 @@
 "region": "{{user `aws_region`}}",
 "source_ami": "ami-0affd4508a5d2481b",
 "instance_type": "t2.micro",
-"ssh_username": "centos",
-"ami_name": "mybaseami"
+"ssh_username": "cloud-user",
+"ami_name": "mybaseami",
+"user_data_file": "bootstrap-user.yml"
 }],
+
 "provisioners":[
  {
  "type": "shell",
@@ -17,13 +20,15 @@
     ]
  },
 {
-"type": "ansible-local",
-"playbook_file":"provisioners/ansible/plays/myplay.yml",
-"role_paths": [
-"provisioners/ansible//roles/myrole"
-]
+"type": "ansible",
+"playbook_file": "provisioners/ansible/common/site.yml"
+},
+{
+"type": "ansible",
+"playbook_file": "provisioners/ansible/cssp/site.yml"
 }
 ]
+
 }
 
 

@@ -4,6 +4,9 @@ Packer is used to build Custom Amazon Machine Images
 
 Execution Flow
 ===========================
+yum install epel-release -y
+
+yum install ansible -y
 
 step 1: clone repo
 
